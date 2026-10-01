@@ -1,178 +1,1041 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Hassan | Principal Software Engineer</title>
+  <meta name="description" content="Principal Software Engineer with 4+ years building scalable Ruby on Rails, React, and Next.js applications. Based in Lahore, Pakistan.">
+  <meta name="keywords" content="Ahmad Hassan, Principal Software Engineer, Ruby on Rails, React, Next.js, Node.js, Lahore">
+  <meta name="author" content="Ahmad Hassan">
+  <meta property="og:title" content="Ahmad Hassan | Principal Software Engineer">
+  <meta property="og:description" content="Principal Software Engineer specializing in Ruby on Rails, React, and Next.js. Available for remote work.">
+  <meta property="og:type" content="profile">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:     #151312;
+      --bg2:    #1c1a18;
+      --bg3:    #222018;
+      --border: rgba(255,255,255,0.07);
+      --text:   #f0ece4;
+      --muted:  #8a8070;
+      --lime:   #c5ff41;
+      --orange: #f46c38;
+      --radius: 10px;
+    }
 
-    <title>Ahmad Hassan | Principal Software Engineer</title>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-    <meta name="keywords" content="Ahmad Hassan, Ruby on Rails, React, Software Engineer" />
-    <meta name="description" content="Ahmad Hassan - Principal Software Engineer specializing in scalable web applications." />
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+      overflow-x: hidden;
+    }
 
-    <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
-    <link rel="stylesheet" href="./css/main.css" />
+    a { text-decoration: none; color: inherit; }
 
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--lime); border-radius: 2px; }
 
-    <script defer src="./javascript/scrollreveal.min.js"></script>
-    <script defer src="./javascript/scrollveal.js"></script>
-  </head>
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(21,19,18,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
 
-  <body>
+    .logo { font-weight: 700; font-size: 17px; letter-spacing: -0.3px; color: var(--text); }
+    .logo span { color: var(--lime); }
 
-    <!-- HERO -->
-    <div id="hero">
-      <section class="container">
-        <h1 class="hero-title">
-          Hi, my name is <span class="text-color-main">Ahmad Hassan</span>
-          <br />
-          I'm a Principal Software Engineer.
-        </h1>
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 
-        <p class="hero-cta">
-          <a class="cta-btn cta-btn--hero" href="#about">Know more</a>
-        </p>
-      </section>
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-btn {
+      background: var(--lime);
+      color: var(--bg);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 50px;
+      transition: opacity 0.2s, transform 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .nav-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      gap: 48px;
+      padding: 140px 60px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(197,255,65,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(244,108,56,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 6px 16px 6px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 20px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .status-dot {
+      width: 7px; height: 7px;
+      background: var(--lime);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-size: 70px;
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -3px;
+      color: var(--text);
+      margin-bottom: 18px;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+
+    .hero h1 .accent   { color: var(--lime); }
+    .hero h1 .accent-o { color: var(--orange); }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 440px;
+      margin-bottom: 32px;
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+
+    .btn-lime {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--lime);
+      color: var(--bg);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 50px;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-lime:hover { opacity: 0.85; transform: translateY(-2px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 13px 28px;
+      border-radius: 50px;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
+
+    .hero-right {
+      display: grid;
+      gap: 12px;
+      animation: fadeUp 0.5s 0.4s ease both;
+    }
+
+    .stat-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 26px;
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 18px;
+      align-items: center;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: default;
+    }
+    .stat-card:hover { border-color: rgba(197,255,65,0.3); transform: translateX(5px); }
+
+    .stat-icon {
+      width: 54px; height: 54px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .stat-icon svg { width: 24px; height: 24px; }
+    .stat-icon.lime   { background: rgba(197,255,65,0.1);   border: 1px solid rgba(197,255,65,0.18); }
+    .stat-icon.orange { background: rgba(244,108,56,0.1);   border: 1px solid rgba(244,108,56,0.18); }
+    .stat-icon.warm   { background: rgba(240,236,228,0.06); border: 1px solid rgba(255,255,255,0.08); }
+
+    .stat-num {
+      font-size: 70px;
+      font-weight: 800;
+      color: var(--lime);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+    .stat-num.orange-c { color: var(--orange); }
+
+    .stat-num .sup {
+      font-size: 32px;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+    .stat-label strong { color: var(--text); font-weight: 600; }
+
+    section { padding: 100px 60px; scroll-margin-top: 72px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 56px;
+    }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--lime);
+      background: rgba(197,255,65,0.1);
+      border: 1px solid rgba(197,255,65,0.15);
+      padding: 4px 10px;
+      border-radius: 50px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .about-bg { background: var(--bg2); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      font-weight: 300;
+    }
+    .about-text p strong { color: var(--text); font-weight: 600; }
+
+    .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .about-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .about-card:hover { border-color: rgba(197,255,65,0.2); transform: translateY(-3px); }
+
+    .about-card-icon { font-size: 22px; margin-bottom: 10px; }
+    .about-card h4 { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+    .about-card p { font-size: 12px; color: var(--muted); line-height: 1.55; margin: 0; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .skill-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .skill-card:hover { border-color: rgba(197,255,65,0.25); transform: translateY(-4px); }
+
+    .skill-card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .skill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); flex-shrink: 0; }
+    .skill-card-title { font-size: 12px; font-weight: 600; color: var(--text); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .tag {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 400;
+      padding: 5px 12px;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .tag:hover { border-color: var(--lime); color: var(--lime); }
+
+    .exp-bg { background: var(--bg2); }
+    .exp-list { display: grid; gap: 14px; }
+
+    .exp-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: start;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .exp-card:hover { border-color: rgba(197,255,65,0.2); transform: translateY(-2px); }
+
+    .exp-badge {
+      width: 46px; height: 46px;
+      border-radius: 10px;
+      background: rgba(197,255,65,0.08);
+      border: 1px solid rgba(197,255,65,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .exp-badge.orange-bg { background: rgba(244,108,56,0.08); border-color: rgba(244,108,56,0.12); }
+
+    .exp-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .exp-role { font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+
+    .exp-date {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+
+    .exp-company { font-size: 13px; color: var(--lime); font-weight: 500; margin-bottom: 14px; }
+
+    .exp-bullets { list-style: none; display: grid; gap: 8px; }
+
+    .exp-bullets li {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .exp-bullets li::before { content: '↳'; color: var(--orange); flex-shrink: 0; font-size: 12px; margin-top: 2px; }
+    .exp-bullets li strong { color: var(--text); font-weight: 600; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .project-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.25s;
+    }
+    .project-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--lime), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover { border-color: rgba(197,255,65,0.2); transform: translateY(-5px); }
+    .project-card:hover::after { transform: scaleX(1); }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .project-icon {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      background: rgba(197,255,65,0.08);
+      border: 1px solid rgba(197,255,65,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .project-num {
+      font-size: 36px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+
+    .project-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 10px; letter-spacing: -0.3px; }
+    .project-desc { font-size: 13px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 18px; }
+
+    .project-pill {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(197,255,65,0.08);
+      border: 1px solid rgba(197,255,65,0.15);
+      color: var(--lime);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-bg { background: var(--bg2); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-left h3 {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .contact-left h3 span { color: var(--lime); }
+    .contact-left p { font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 36px; }
+
+    .contact-links { display: grid; gap: 12px; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 12px 16px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .contact-link:hover { border-color: rgba(197,255,65,0.25); color: var(--text); transform: translateX(4px); }
+
+    .contact-link-icon {
+      width: 34px; height: 34px;
+      background: rgba(197,255,65,0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+    }
+
+    .contact-form h4 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .contact-form .form-sub { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { margin-bottom: 12px; }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--lime); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--muted); }
+
+    .btn-form {
+      width: 100%;
+      background: var(--lime);
+      color: var(--bg);
+      border: none;
+      padding: 13px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s, transform 0.2s;
+      margin-top: 6px;
+    }
+    .btn-form:hover { opacity: 0.85; transform: translateY(-2px); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: var(--muted); font-size: 12px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--lime); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 54px; letter-spacing: -2px; }
+      .stat-num { font-size: 54px; }
+      .stat-num .sup { font-size: 26px; }
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 110px 20px 60px; gap: 40px; min-height: auto; }
+      .hero h1 { font-size: 48px; letter-spacing: -1.5px; }
+      .stat-num { font-size: 48px; }
+      section { padding: 72px 20px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-cards { grid-template-columns: 1fr 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .exp-card { grid-template-columns: 1fr; gap: 14px; }
+      footer { flex-direction: column; gap: 12px; padding: 24px 20px; text-align: center; }
+    }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 38px; letter-spacing: -1px; }
+      .stat-num { font-size: 38px; }
+      .stat-num .sup { font-size: 20px; }
+      .about-cards, .skills-grid { grid-template-columns: 1fr; }
+      h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Ahmad<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:ahmad.hassan3935@gmail.com" class="nav-btn">Hire Me</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="status-dot"></span>
+        Available for remote opportunities
+      </div>
+      <h1>Principal<br><span class="accent">Software</span><br><span class="accent-o">Engineer</span></h1>
+      <p class="hero-desc">Ruby on Rails and React engineer with 4 years building commercial applications, leading teams, and shipping scalable products from architecture to delivery.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-lime">View Projects →</a>
+        <a href="./files/resume.pdf" class="btn-outline" target="_blank" rel="noopener">Download CV</a>
+      </div>
     </div>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="stat-icon lime">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c5ff41" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-num">4<span class="sup">+</span></div>
+          <div class="stat-label">Years of <strong>hands-on experience</strong></div>
+        </div>
+      </div>
 
-        <div class="row about-wrapper">
-          <div class="about-wrapper__image">
-            <img class="img-fluid" src="./assets/profile.png" width="450"/>
+      <div class="stat-card">
+        <div class="stat-icon orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f46c38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-num orange-c">5</div>
+          <div class="stat-label"><strong>Engineering roles</strong> across product teams</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon warm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f0ece4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-num">4</div>
+          <div class="stat-label"><strong>Shipped platforms</strong> from Rails to Next.js</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-bg" id="about">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">01 — About</span>
+        <h2>Product builder.<br>Engineering lead.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a <strong>Principal Software Engineer</strong> based in Lahore, Pakistan — a seasoned Ruby on Rails engineer with strong React.js experience and four years of commercial application development.</p>
+          <p>I lead projects end to end: architecture, collaboration, and delivery. I care about writing maintainable systems, mentoring teams, and staying current with emerging technologies so products stay fast and future-proof.</p>
+          <p>Currently at <strong>Tkxel</strong>, designing scalable applications with Rails, React, and Next.js. <strong>Open to roles where ownership and impact matter.</strong> B.S. Computer Science, University of Lahore (2017–2021).</p>
+        </div>
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="about-card-icon">🏗️</div>
+            <h4>System Architecture</h4>
+            <p>End-to-end design of scalable Rails, React, and Next.js applications.</p>
           </div>
-
-          <div class="about-wrapper__info">
-            <p>
-              I am a Principal Software Engineer with 4+ years of experience building scalable web applications using Ruby on Rails and React.js.
-            </p>
-
-            <p>
-              I specialize in system architecture, performance optimization, and leading engineering teams to deliver high-quality products. Passionate about solving complex problems and adopting modern technologies.
-            </p>
-
-            <span class="about-wrapper__cta">
-              <a href="./assets/resume.pdf" class="cta-btn cta-btn--resume" target="_blank">
-                View Resume
-              </a>
-            </span>
+          <div class="about-card">
+            <div class="about-card-icon">🧭</div>
+            <h4>Mentorship</h4>
+            <p>Guiding engineers on code quality, collaboration, and delivery.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">⚡</div>
+            <h4>Problem Solving</h4>
+            <p>Breaking complexity into modular parts and shipping reliable solutions.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🎯</div>
+            <h4>Accountability</h4>
+            <p>Owning outcomes, learning from mistakes, and raising the bar for the team.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title dark-blue-text">Projects</h2>
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">02 — Skills</span>
+        <h2>Tech stack</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <div class="skill-dot"></div>
+            <div class="skill-card-title">Programming</div>
+          </div>
+          <div class="tags">
+            <span class="tag">Ruby on Rails</span>
+            <span class="tag">React JS</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Node JS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <div class="skill-dot" style="background:var(--orange)"></div>
+            <div class="skill-card-title">Frontend</div>
+          </div>
+          <div class="tags">
+            <span class="tag">HTML 5</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">Tailwind</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <div class="skill-dot"></div>
+            <div class="skill-card-title">Databases</div>
+          </div>
+          <div class="tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">Postgres</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <div class="skill-dot" style="background:var(--orange)"></div>
+            <div class="skill-card-title">Cloud &amp; Servers</div>
+          </div>
+          <div class="tags">
+            <span class="tag">AWS</span>
+            <span class="tag">Azure</span>
+            <span class="tag">GCloud</span>
+            <span class="tag">Heroku</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <div class="skill-dot"></div>
+            <div class="skill-card-title">Platforms</div>
+          </div>
+          <div class="tags">
+            <span class="tag">Solidus</span>
+            <span class="tag">AI Voice Agents</span>
+            <span class="tag">Message AI Agents</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <div class="skill-dot" style="background:var(--orange)"></div>
+            <div class="skill-card-title">Languages</div>
+          </div>
+          <div class="tags">
+            <span class="tag">English — Proficient</span>
+            <span class="tag">Urdu — Native</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- SIGNAL -->
-        <article class="row">
-          <div class="project-wrapper__text">
-            <h3>Signal</h3>
-            <p>
-              Scalable web platform for a security services company, providing modern digital presence and operational support.
-            </p>
-            <ul>
-              <li>Designed architecture using Ruby on Rails & Next.js</li>
-              <li>Optimized performance, SEO, and maintainability</li>
-            </ul>
+  <section class="exp-bg" id="experience">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">03 — Experience</span>
+        <h2>Where I've worked</h2>
+      </div>
+      <div class="exp-list">
 
-            <div class="project-wrapper__text-btns">
-              <a href="https://www.teamsignal.com/" target="_blank" class="cta-btn cta-btn--projects">
-                See Live
-              </a>
+        <article class="exp-card">
+          <div class="exp-badge">🏢</div>
+          <div>
+            <div class="exp-header-row">
+              <div class="exp-role">Principal Software Engineer</div>
+              <div class="exp-date">Oct 2025 — Present</div>
             </div>
-          </div>
-
-          <div class="project-wrapper__image">
-            <img src="./assets/project.png" class="img-fluid"/>
-          </div>
-        </article>
-
-        <!-- CHIIRP -->
-        <article class="row">
-          <div class="project-wrapper__text">
-            <h3>Chiirp</h3>
-            <p>
-              AI-powered communication platform integrating voice and messaging agents.
-            </p>
-            <ul>
-              <li>Built AI voice & chat agents for automation</li>
-              <li>Improved response time and customer engagement</li>
+            <div class="exp-company">Tkxel · Lahore, Pakistan</div>
+            <ul class="exp-bullets">
+              <li><span>Led end-to-end design and development of scalable applications using <strong>Ruby on Rails, React, and Next.js</strong>, ensuring high-quality and timely delivery.</span></li>
+              <li><span>Defined system architecture and made key technical decisions to improve scalability, performance, and maintainability.</span></li>
+              <li><span>Mentored engineering teams, promoting best practices, code quality, and effective collaboration.</span></li>
+              <li><span>Partnered with stakeholders to translate business requirements into robust, future-proof technical solutions.</span></li>
             </ul>
           </div>
-
-          <div class="project-wrapper__image">
-            <img src="./assets/project.png" class="img-fluid"/>
-          </div>
         </article>
 
-        <!-- IGNTD -->
-        <article class="row">
-          <div class="project-wrapper__text">
-            <h3>IGNTD</h3>
-            <p>
-              Cloud-based platform for addiction recovery services with global accessibility.
-            </p>
-            <ul>
-              <li>Developed backend with Rails & frontend with React</li>
-              <li>Integrated AWS, Azure, and GCloud services</li>
+        <article class="exp-card">
+          <div class="exp-badge orange-bg">💻</div>
+          <div>
+            <div class="exp-header-row">
+              <div class="exp-role">Senior Software Engineer</div>
+              <div class="exp-date">Sep 2024 — Oct 2025</div>
+            </div>
+            <div class="exp-company" style="color:var(--orange)">TechieMinions · Lahore, Pakistan</div>
+            <ul class="exp-bullets">
+              <li><span>Developed and led Ruby on Rails projects independently, ensuring timely delivery and high-quality results.</span></li>
+              <li><span>Managed and mentored team members, fostering collaboration, code quality, and knowledge sharing.</span></li>
+              <li><span>Improved client satisfaction by tailoring solutions to business needs and delivering scalable applications.</span></li>
+              <li><span>Adopted emerging technologies to enhance performance, maintainability, and system reliability.</span></li>
             </ul>
           </div>
+        </article>
 
-          <div class="project-wrapper__image">
-            <img src="./assets/project.png" class="img-fluid"/>
+        <article class="exp-card">
+          <div class="exp-badge">⚙️</div>
+          <div>
+            <div class="exp-header-row">
+              <div class="exp-role">Software Engineer</div>
+              <div class="exp-date">Mar 2023 — Sep 2024</div>
+            </div>
+            <div class="exp-company">Cloudpacer · Lahore, Pakistan</div>
+            <ul class="exp-bullets">
+              <li><span>Developed and led Ruby on Rails projects independently while contributing to frontend work with <strong>React.js</strong>.</span></li>
+              <li><span>Improved client satisfaction by tailoring solutions and applying technology enhancements.</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-badge orange-bg">🔧</div>
+          <div>
+            <div class="exp-header-row">
+              <div class="exp-role">Software Engineer (ROR)</div>
+              <div class="exp-date">Dec 2021 — Mar 2023</div>
+            </div>
+            <div class="exp-company" style="color:var(--orange)">Viral Square · Lahore, Pakistan</div>
+            <ul class="exp-bullets">
+              <li><span>Started as an intern, then promoted to Associate Software Engineer and Software Engineer, leading critical projects solo from inception to completion.</span></li>
+              <li><span>Owned requirements gathering, system design, coding, testing, and deployment, with transparent stakeholder communication.</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-badge">🌱</div>
+          <div>
+            <div class="exp-header-row">
+              <div class="exp-role">Node JS Intern</div>
+              <div class="exp-date">Jul 2021 — Sep 2021</div>
+            </div>
+            <div class="exp-company">Azure Innovations · Lahore, Pakistan</div>
+            <ul class="exp-bullets">
+              <li><span>Completed a three-month Node.js internship contributing to backend development, code reviews, bug fixing, and frontend integration.</span></li>
+            </ul>
           </div>
         </article>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
+  <section id="projects">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">04 — Projects</span>
+        <h2>Notable work</h2>
+      </div>
+      <div class="projects-grid">
 
-        <div class="contact-wrapper">
-          <p>Interested in working together? Let's connect.</p>
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">🛡️</div>
+            <div class="project-num">01</div>
+          </div>
+          <div class="project-title">Signal</div>
+          <p class="project-desc">Web platform for a security services company — a modern, scalable digital presence. Designed architecture with Ruby on Rails and Next.js, then optimized frontend and backend for performance, SEO, and maintainability.</p>
+          <span class="project-pill">2025 — Present · Rails · Next.js</span>
+        </article>
 
-          <a href="mailto:ahmad.hassan3935@gmail.com" class="cta-btn cta-btn--resume">
-            Email Me
-          </a>
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">🎙️</div>
+            <div class="project-num">02</div>
+          </div>
+          <div class="project-title">Chiirp</div>
+          <p class="project-desc">Integrated AI-driven Voice Call Agents and Message AI Agents to automate customer communication. Real-time intelligent responses reduced manual effort, improved response time, and raised client satisfaction.</p>
+          <span class="project-pill">2024 — 2025 · AI Agents</span>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">☁️</div>
+            <div class="project-num">03</div>
+          </div>
+          <div class="project-title">IGNTD</div>
+          <p class="project-desc">Remote work with A2Z Enterprises LLC (MA) on a cloud platform using Azure, GCloud, and AWS. Rails backend and React frontend delivered a robust addiction recovery service with global accessibility.</p>
+          <span class="project-pill">2024 · Rails · React · Multi-cloud</span>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">🍬</div>
+            <div class="project-num">04</div>
+          </div>
+          <div class="project-title">Cultural Candy</div>
+          <p class="project-desc">Remote work with Travel's City Inc LLC (MA) on a scalable multi-cloud platform. Java Spring backend and React frontend streamlined cultural candy sales and global customer engagement.</p>
+          <span class="project-pill">2022 · Spring · React · Azure / AWS / GCloud</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-bg" id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">05 — Contact</span>
+        <h2>Let's build<br>something great</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h3>Open to remote<br><span>opportunities</span></h3>
+          <p>Engineering roles, product leadership, or interesting problems worth solving — I'm all ears. Reach out directly or fill in the form.</p>
+          <div class="contact-links">
+            <a href="mailto:ahmad.hassan3935@gmail.com" class="contact-link">
+              <div class="contact-link-icon">✉</div>
+              ahmad.hassan3935@gmail.com
+            </a>
+            <a href="https://github.com/Mian-Ahmad-Hassan" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon">⌥</div>
+              Mian-Ahmad-Hassan
+            </a>
+            <a href="tel:+923104012003" class="contact-link">
+              <div class="contact-link-icon">☎</div>
+              +92 310 401 2003
+            </a>
+            <a href="#contact" class="contact-link">
+              <div class="contact-link-icon">⌖</div>
+              Lahore, Pakistan
+            </a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h4>Send a message</h4>
+          <p class="form-sub">I'll respond as soon as I can.</p>
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+              <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
+            </div>
+            <div class="form-group"><input type="text" name="subject" placeholder="Subject"></div>
+            <div class="form-group"><textarea name="message" placeholder="Your message…" required></textarea></div>
+            <button type="submit" class="btn-form">Send Message →</button>
+          </form>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container">
+  <footer>
+    <span>© <span id="year"></span> Ahmad Hassan — Principal Software Engineer</span>
+    <div class="footer-links">
+      <a href="mailto:ahmad.hassan3935@gmail.com">Email</a>
+      <a href="https://github.com/Mian-Ahmad-Hassan" target="_blank" rel="noopener">GitHub</a>
+      <a href="./files/resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </footer>
 
-        <div class="social-links">
-          <a href="https://github.com/Mian-Ahmad-Hassan" target="_blank">
-            <i class="fa-brands fa-github"></i>
-          </a>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var form = e.target;
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      var subject = form.subject.value.trim() || 'Portfolio inquiry';
+      var message = form.message.value.trim();
+      var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
+      window.location.href = 'mailto:ahmad.hassan3935@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  </script>
 
-          <a href="https://www.linkedin.com/" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </div>
-
-        <hr />
-
-        <p>
-          © <span id="year"></span> Ahmad Hassan
-        </p>
-      </div>
-    </footer>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-
-  </body>
+</body>
 </html>
